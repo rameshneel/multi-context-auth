@@ -1,5 +1,5 @@
 {
-    "name": "@bizpickr/auth-context",
+    "name": "bizpickr-auth-context",
     "version": "1.0.0",
     "description": "Context-scoped authentication utilities for BizPickr microservices. Handles multi-tenant cookie isolation, context resolution, and token extraction.",
     "type": "module",
@@ -36,7 +36,7 @@
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "https://github.com/rameshneel/bizpickr-auth-context.git"
+        "url": "git+https://github.com/rameshneel/bizpickr-auth-context.git"
     },
     "bugs": {
         "url": "https://github.com/rameshneel/bizpickr-auth-context/issues"

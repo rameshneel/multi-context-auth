@@ -1,6 +1,6 @@
-# @bizpickr/auth-context
+# bizpickr-auth-context
 
-[![npm version](https://img.shields.io/npm/v/@bizpickr/auth-context.svg)](https://www.npmjs.com/package/@bizpickr/auth-context)
+[![npm version](https://img.shields.io/npm/v/bizpickr-auth-context.svg)](https://www.npmjs.com/package/bizpickr-auth-context)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 
@@ -19,13 +19,13 @@ Context-scoped authentication utilities for BizPickr microservices. Handles mult
 ## Installation
 
 ```bash
-npm install @bizpickr/auth-context
+npm install bizpickr-auth-context
 ```
 
 ## Quick Start
 
 ```javascript
-import { extractToken, resolveAuthContext } from '@bizpickr/auth-context';
+import { extractToken, resolveAuthContext } from 'bizpickr-auth-context';
 
 // Extract token with automatic context resolution
 const { token, source, context } = extractToken(req);
@@ -45,7 +45,7 @@ const context = resolveAuthContext(req);
 ### Basic Token Extraction
 
 ```javascript
-import { extractToken } from '@bizpickr/auth-context';
+import { extractToken } from 'bizpickr-auth-context';
 
 // Extracts token from:
 // 1. Authorization header (Bearer token)
@@ -66,7 +66,7 @@ if (!token) {
 ### Context Resolution
 
 ```javascript
-import { resolveAuthContext } from '@bizpickr/auth-context';
+import { resolveAuthContext } from 'bizpickr-auth-context';
 
 // Resolves context from:
 // 1. Origin header
@@ -80,7 +80,7 @@ const context = resolveAuthContext(req);
 ### Context-Specific Token Extraction
 
 ```javascript
-import { extractContextToken } from '@bizpickr/auth-context';
+import { extractContextToken } from 'bizpickr-auth-context';
 
 // Extract token for specific context
 const accessToken = extractContextToken(req, 'customer', 'access');
@@ -93,7 +93,7 @@ const refreshToken = extractContextToken(req, 'vendor', 'refresh');
 ### Extract from All Contexts
 
 ```javascript
-import { extractTokenFromAllContexts } from '@bizpickr/auth-context';
+import { extractTokenFromAllContexts } from 'bizpickr-auth-context';
 
 // Try all contexts until token is found
 const { token, context } = extractTokenFromAllContexts(req, 'access');
@@ -106,7 +106,7 @@ if (token) {
 ### Custom Context Origins
 
 ```javascript
-import { resolveAuthContext } from '@bizpickr/auth-context';
+import { resolveAuthContext } from 'bizpickr-auth-context';
 
 const customOrigins = {
   admin: ['https://admin.example.com'],
@@ -123,7 +123,7 @@ const context = resolveAuthContext(req, {
 ### Express Middleware Example
 
 ```javascript
-import { extractToken, resolveAuthContext } from '@bizpickr/auth-context';
+import { extractToken, resolveAuthContext } from 'bizpickr-auth-context';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
 
 const JWKS = createRemoteJWKSet(new URL(process.env.JWKS_URL));
