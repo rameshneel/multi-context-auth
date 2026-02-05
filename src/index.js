@@ -1,5 +1,5 @@
 /**
- * bizpickr-auth-context
+ * multi-context-auth
  * 
  * Context-Scoped Authentication Utilities
  * 
@@ -9,12 +9,12 @@
  * - Token extraction with context awareness
  * - Multi-tenant cookie isolation
  * 
- * @module bizpickr-auth-context
+ * @module multi-context-auth
  * @version 1.0.0
  * 
  * @example
  * // Basic token extraction
- * import { extractToken } from 'bizpickr-auth-context';
+ * import { extractToken } from 'multi-context-auth';
  * 
  * const { token, source, context } = extractToken(req);
  * if (token) {
@@ -23,14 +23,14 @@
  * 
  * @example
  * // Context resolution
- * import { resolveAuthContext } from 'bizpickr-auth-context';
+ * import { resolveAuthContext } from 'multi-context-auth';
  * 
  * const context = resolveAuthContext(req);
  * // Returns: 'customer' | 'vendor' | 'admin' | null
  * 
  * @example
  * // Context-specific token extraction
- * import { extractContextToken } from 'bizpickr-auth-context';
+ * import { extractContextToken } from 'multi-context-auth';
  * 
  * const token = extractContextToken(req, 'customer', 'access');
  * // Gets: customer_access_token cookie

@@ -5,7 +5,7 @@
 ### Basic Authentication Middleware
 
 ```javascript
-import { extractToken } from '@bizpickr/auth-context';
+import { extractToken } from 'multi-context-auth';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
 
 const JWKS = createRemoteJWKSet(new URL(process.env.JWKS_URL));
@@ -37,7 +37,7 @@ export const authMiddleware = async (req, res, next) => {
 ### Context-Aware Middleware
 
 ```javascript
-import { extractToken, resolveAuthContext } from '@bizpickr/auth-context';
+import { extractToken, resolveAuthContext } from 'multi-context-auth';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
 
 const JWKS = createRemoteJWKSet(new URL(process.env.JWKS_URL));
@@ -79,7 +79,7 @@ export const contextAwareAuth = async (req, res, next) => {
 ### Context-Specific Token Extraction
 
 ```javascript
-import { extractContextToken } from '@bizpickr/auth-context';
+import { extractContextToken } from 'multi-context-auth';
 
 export const getCustomerToken = (req) => {
   return extractContextToken(req, 'customer', 'access');
@@ -93,7 +93,7 @@ export const getVendorRefreshToken = (req) => {
 ## Custom Context Origins
 
 ```javascript
-import { resolveAuthContext } from '@bizpickr/auth-context';
+import { resolveAuthContext } from 'multi-context-auth';
 
 const customOrigins = {
   admin: [
@@ -119,7 +119,7 @@ const context = resolveAuthContext(req, {
 ## Error Handling
 
 ```javascript
-import { extractToken } from '@bizpickr/auth-context';
+import { extractToken } from 'multi-context-auth';
 
 export const safeExtractToken = (req) => {
   try {
@@ -150,7 +150,7 @@ export const safeExtractToken = (req) => {
 ## Multiple Token Types
 
 ```javascript
-import { extractContextTokens } from '@bizpickr/auth-context';
+import { extractContextTokens } from 'multi-context-auth';
 
 export const getAllCustomerTokens = (req) => {
   return extractContextTokens(req, 'customer', [

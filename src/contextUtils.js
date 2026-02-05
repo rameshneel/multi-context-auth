@@ -16,16 +16,16 @@
  */
 const DEFAULT_CONTEXT_ORIGINS = {
   admin: [
-    'https://admin.bizpickr.cloud',
+    'https://admin.example.com',
     'http://localhost:4202',
   ],
   vendor: [
-    'https://vendor.bizpickr.cloud',
+    'https://vendor.example.com',
     'http://localhost:4201',
   ],
   customer: [
-    'https://customer.bizpickr.cloud',
-    'https://bizpickr.cloud',
+    'https://customer.example.com',
+    'https://app.example.com',
     'http://localhost:3000',
     'http://localhost:4200',
   ],
@@ -174,7 +174,7 @@ export function getContextFromType(type) {
  * 
  * @example
  * const allowed = isOriginAllowedForContext(
- *   'https://customer.bizpickr.cloud',
+ *   'https://customer.example.com',
  *   'customer'
  * );
  * // Returns: true

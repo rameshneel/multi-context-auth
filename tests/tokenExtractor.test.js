@@ -31,7 +31,7 @@ describe('Token Extractor', () => {
     it('should extract token from context-specific cookie when context is known', () => {
       const req = {
         headers: {
-          origin: 'https://customer.bizpickr.cloud',
+          origin: 'https://customer.example.com',
         },
         cookies: {
           customer_access_token: 'cookie-token',
@@ -103,7 +103,7 @@ describe('Token Extractor', () => {
     it('should extract refresh token type', () => {
       const req = {
         headers: {
-          origin: 'https://customer.bizpickr.cloud',
+          origin: 'https://customer.example.com',
         },
         cookies: {
           customer_refresh_token: 'refresh-token',

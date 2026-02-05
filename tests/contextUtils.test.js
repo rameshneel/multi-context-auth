@@ -19,7 +19,7 @@ describe('Context Utils', () => {
     test('should resolve context from origin header', () => {
       const req = {
         headers: {
-          origin: 'https://customer.bizpickr.cloud',
+          origin: 'https://customer.example.com',
         },
       };
 
@@ -55,7 +55,7 @@ describe('Context Utils', () => {
   describe('isOriginAllowedForContext', () => {
     test('should validate allowed origin', () => {
       const allowed = isOriginAllowedForContext(
-        'https://customer.bizpickr.cloud',
+        'https://customer.example.com',
         'customer'
       );
       expect(allowed).toBe(true);

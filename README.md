@@ -1,10 +1,10 @@
-# bizpickr-auth-context
+# multi-context-auth
 
-[![npm version](https://img.shields.io/npm/v/bizpickr-auth-context.svg)](https://www.npmjs.com/package/bizpickr-auth-context)
+[![npm version](https://img.shields.io/npm/v/multi-context-auth.svg)](https://www.npmjs.com/package/multi-context-auth)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 
-Context-scoped authentication utilities for BizPickr microservices. Handles multi-tenant cookie isolation, context resolution, and token extraction.
+Context-scoped authentication utilities for microservices. Handles multi-tenant cookie isolation, context resolution, and token extraction.
 
 ## Features
 
@@ -19,13 +19,13 @@ Context-scoped authentication utilities for BizPickr microservices. Handles mult
 ## Installation
 
 ```bash
-npm install bizpickr-auth-context
+npm install multi-context-auth
 ```
 
 ## Quick Start
 
 ```javascript
-import { extractToken, resolveAuthContext } from 'bizpickr-auth-context';
+import { extractToken, resolveAuthContext } from 'multi-context-auth';
 
 // Extract token with automatic context resolution
 const { token, source, context } = extractToken(req);
@@ -45,7 +45,7 @@ const context = resolveAuthContext(req);
 ### Basic Token Extraction
 
 ```javascript
-import { extractToken } from 'bizpickr-auth-context';
+import { extractToken } from 'multi-context-auth';
 
 // Extracts token from:
 // 1. Authorization header (Bearer token)
@@ -66,7 +66,7 @@ if (!token) {
 ### Context Resolution
 
 ```javascript
-import { resolveAuthContext } from 'bizpickr-auth-context';
+import { resolveAuthContext } from 'multi-context-auth';
 
 // Resolves context from:
 // 1. Origin header
@@ -80,7 +80,7 @@ const context = resolveAuthContext(req);
 ### Context-Specific Token Extraction
 
 ```javascript
-import { extractContextToken } from 'bizpickr-auth-context';
+import { extractContextToken } from 'multi-context-auth';
 
 // Extract token for specific context
 const accessToken = extractContextToken(req, 'customer', 'access');
@@ -93,7 +93,7 @@ const refreshToken = extractContextToken(req, 'vendor', 'refresh');
 ### Extract from All Contexts
 
 ```javascript
-import { extractTokenFromAllContexts } from 'bizpickr-auth-context';
+import { extractTokenFromAllContexts } from 'multi-context-auth';
 
 // Try all contexts until token is found
 const { token, context } = extractTokenFromAllContexts(req, 'access');
@@ -106,7 +106,7 @@ if (token) {
 ### Custom Context Origins
 
 ```javascript
-import { resolveAuthContext } from 'bizpickr-auth-context';
+import { resolveAuthContext } from 'multi-context-auth';
 
 const customOrigins = {
   admin: ['https://admin.example.com'],
@@ -123,7 +123,7 @@ const context = resolveAuthContext(req, {
 ### Express Middleware Example
 
 ```javascript
-import { extractToken, resolveAuthContext } from 'bizpickr-auth-context';
+import { extractToken, resolveAuthContext } from 'multi-context-auth';
 import { jwtVerify, createRemoteJWKSet } from 'jose';
 
 const JWKS = createRemoteJWKSet(new URL(process.env.JWKS_URL));
@@ -262,16 +262,16 @@ Cookies follow the pattern: `{context}_{tokenType}_token`
 ```javascript
 {
   admin: [
-    'https://admin.bizpickr.cloud',
+    'https://admin.example.com',
     'http://localhost:4202',
   ],
   vendor: [
-    'https://vendor.bizpickr.cloud',
+    'https://vendor.example.com',
     'http://localhost:4201',
   ],
   customer: [
-    'https://customer.bizpickr.cloud',
-    'https://bizpickr.cloud',
+    'https://customer.example.com',
+    'https://app.example.com',
     'http://localhost:3000',
     'http://localhost:4200',
   ],
@@ -304,7 +304,7 @@ ISC
 
 ## Support
 
-For issues and questions, please open an issue on [GitHub](https://github.com/rameshneel/bizpickr-auth-context/issues).
+For issues and questions, please open an issue on [GitHub](https://github.com/rameshneel/multi-context-auth/issues).
 
 ## Changelog
 

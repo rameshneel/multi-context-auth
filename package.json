@@ -1,7 +1,7 @@
 {
-    "name": "bizpickr-auth-context",
+    "name": "multi-context-auth",
     "version": "1.0.0",
-    "description": "Context-scoped authentication utilities for BizPickr microservices. Handles multi-tenant cookie isolation, context resolution, and token extraction.",
+    "description": "Context-scoped authentication utilities for microservices. Handles multi-tenant cookie isolation, context resolution, and token extraction.",
     "type": "module",
     "main": "src/index.js",
     "exports": {
@@ -24,24 +24,22 @@
         "cookie",
         "jwt",
         "microservices",
-        "bizpickr",
         "context-scoped",
         "cookie-isolation",
         "token-extraction"
     ],
     "author": {
-        "name": "neel networks",
-        "email": "support@bizpickr.cloud"
+        "name": "neel networks"
     },
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/rameshneel/bizpickr-auth-context.git"
+        "url": "git+https://github.com/rameshneel/multi-context-auth.git"
     },
     "bugs": {
-        "url": "https://github.com/rameshneel/bizpickr-auth-context/issues"
+        "url": "https://github.com/rameshneel/multi-context-auth/issues"
     },
-    "homepage": "https://github.com/rameshneel/bizpickr-auth-context#readme",
+    "homepage": "https://github.com/rameshneel/multi-context-auth#readme",
     "engines": {
         "node": ">=18.0.0",
         "npm": ">=8.0.0"

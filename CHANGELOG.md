@@ -29,4 +29,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom context origins support
 - Development mode header override support
 
-[1.0.0]: https://github.com/rameshneel/bizpickr-auth-context/releases/tag/v1.0.0
+[1.0.0]: https://github.com/rameshneel/multi-context-auth/releases/tag/v1.0.0
